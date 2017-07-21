@@ -1,6 +1,6 @@
 import * as moment from "moment";
 
-import { Transformer } from "../transformers";
+import { Transformer } from "../transformers/transformer";
 import { Account } from "../types";
 
 export class AccountTransformer extends Transformer {

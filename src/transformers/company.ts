@@ -1,6 +1,6 @@
 import * as moment from "moment";
 
-import { Transformer } from "../transformers";
+import { Transformer } from "../transformers/transformer";
 import { Company } from "../types";
 
 export class CompanyTransformer extends Transformer {

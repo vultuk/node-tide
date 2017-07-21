@@ -1,6 +1,6 @@
 {
   "name": "node-tide",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A Node modules to assist with connections to the Tide business banking API",
   "repository": {
     "type": "git",
@@ -14,10 +14,12 @@
   },
   "dependencies": {
     "moment": "^2.18.1",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4"
   },
   "devDependencies": {
     "@types/node": "^7.0.32",
+    "@types/request": "^2.0.0",
     "rimraf": "^2.5.4",
     "tslint": "^5.4.2",
     "typescript": "^2.4.0"

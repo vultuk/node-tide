@@ -1,16 +1,16 @@
-import { Service } from "../services"
+import { Service } from "../services/service"
 import { TransactionTransformer } from "../transformers";
 import { Transaction } from "../types";
 
 export class Transactions extends Service {
 
   public all(accountId: number): Promise<Transaction[]> {
-    return this.getRequest(`/accounts/${accountId}/transactions`, {})
+    return this.getRequest(`/external/accounts/${accountId}/transactions`, {})
       .then(response => (new TransactionTransformer).items(response))
   }
 
   public findReference(accountId: number, transactionReference: string): Promise<Transaction[]> {
-    return this.getRequest(`/accounts/${accountId}/transactions`, {})
+    return this.all(accountId)
       .then(response => (new TransactionTransformer).items(response))
       .then(transactions => {
         let foundTransactions: Transaction[] = [];

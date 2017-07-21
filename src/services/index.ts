@@ -1,4 +1,4 @@
 export { Accounts } from "./accounts";
+export { Auth } from "./auth";
 export { Companies } from "./companies";
-export { Service } from "./service";
 export { Transactions } from "./transactions";
