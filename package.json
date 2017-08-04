@@ -1,6 +1,6 @@
 {
   "name": "node-tide",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A Node modules to assist with connections to the Tide business banking API",
   "repository": {
     "type": "git",
@@ -10,6 +10,7 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "compile": "rimraf dist && tsc -d",
+    "example": "npm run compile && node ./dist/example.js",
     "prepublish": "npm run compile"
   },
   "dependencies": {

@@ -1,11 +1,11 @@
+import * as Entities from "../entities";
 import * as moment from "moment";
 
 import { Transformer } from "../transformers/transformer";
-import { Transaction, Category } from "../types";
 
-export class TransactionTransformer extends Transformer {
+export class Transaction extends Transformer {
 
-  public item(item: any): Promise<Transaction> {
+  public item(item: any): Promise<Entities.Transaction> {
     return Promise.resolve(item)
       .then(item => {
         return {
@@ -26,8 +26,8 @@ export class TransactionTransformer extends Transformer {
             id: item.categoryId,
             name: item.categoryName,
             type: item.categoryType
-          } as Category
-        } as Transaction;
+          } as Entities.Category
+        } as Entities.Transaction;
       });
   }
 

@@ -1,24 +1,24 @@
 export * from "./services";
-export * from "./types";
+export * from "./entities";
 
-import { Auth, Companies, Accounts, Transactions } from "./services";
+import * as Services from "./services";
 
 export class Tide {
-  public auth: Auth;
-  public companies: Companies;
-  public accounts: Accounts;
-  public transactions: Transactions;
+  public auth: Services.Auth;
+  public companies: Services.Companies;
+  public accounts: Services.Accounts;
+  public transactions: Services.Transactions;
 
   constructor(accessToken: string = undefined) {
-    this.auth = (new Auth());
+    this.auth = (new Services.Auth());
     if (accessToken !== undefined) { this.setAccessToken(accessToken); }
   }
 
   public setAccessToken(accessToken: string = undefined) {
     if (accessToken === undefined) { throw new Error("Access Token not Supplied"); }
-    this.companies = (new Companies()).setAccessToken(accessToken);
-    this.accounts = (new Accounts()).setAccessToken(accessToken);
-    this.transactions = (new Transactions()).setAccessToken(accessToken);
+    this.companies = (new Services.Companies()).setAccessToken(accessToken);
+    this.accounts = (new Services.Accounts()).setAccessToken(accessToken);
+    this.transactions = (new Services.Transactions()).setAccessToken(accessToken);
   }
 
 }

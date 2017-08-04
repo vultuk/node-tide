@@ -1,11 +1,11 @@
+import * as Entities from "../entities";
 import * as moment from "moment";
 
 import { Transformer } from "../transformers/transformer";
-import { Account } from "../types";
 
-export class AccountTransformer extends Transformer {
+export class Account extends Transformer {
 
-  public item(item: any): Promise<Account> {
+  public item(item: any): Promise<Entities.Account> {
     return Promise.resolve(item)
       .then(item => {
         return {
@@ -19,7 +19,7 @@ export class AccountTransformer extends Transformer {
           currencyCode: item.currencyCode,
           createdOn: moment(item.isoCreatedOn),
           updatedOn: moment(item.isoUpdatedOn)
-        } as Account;
+        } as Entities.Account;
       });
   }
 

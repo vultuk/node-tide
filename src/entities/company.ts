@@ -1,6 +1,7 @@
+import * as Interfaces from "../interfaces";
 import * as moment from "moment";
 
-export class Company {
+export class Company implements Interfaces.Company {
   public id: number;
   public number: number;
   public name: string;

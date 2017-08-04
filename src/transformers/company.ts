@@ -1,11 +1,11 @@
+import * as Entities from "../entities";
 import * as moment from "moment";
 
 import { Transformer } from "../transformers/transformer";
-import { Company } from "../types";
 
-export class CompanyTransformer extends Transformer {
+export class Company extends Transformer {
 
-  public item(item: any): Promise<Company> {
+  public item(item: any): Promise<Entities.Company> {
     return Promise.resolve(item)
       .then(item => {
         return {
@@ -18,7 +18,7 @@ export class CompanyTransformer extends Transformer {
           registered: item.registered,
           createdOn: moment(item.isoCreatedOn),
           updatedOn: moment(item.isoUpdatedOn)
-        } as Company;
+        } as Entities.Company;
       });
   }
 

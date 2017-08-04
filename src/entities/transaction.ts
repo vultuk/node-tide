@@ -1,8 +1,8 @@
+import * as Entities from "./";
+import * as Interfaces from "../interfaces";
 import * as moment from "moment";
 
-import { Category } from "./";
-
-export class Transaction {
+export class Transaction implements Interfaces.Transaction {
   public id: number;
   public accountId: number;
   public amount: number;
@@ -16,5 +16,5 @@ export class Transaction {
   public description: string;
   public createdOn: moment.Moment;
   public updatedOn: moment.Moment;
-  public category: Category;
+  public category: Entities.Category;
 }

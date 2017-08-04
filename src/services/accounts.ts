@@ -1,12 +1,13 @@
-import { Service } from "../services/service"
-import { AccountTransformer } from "../transformers";
-import { Account } from "../types";
+import * as Entities from "../entities";
+import * as Transformers from "../transformers";
+
+import { Service } from "../services/service";
 
 export class Accounts extends Service {
 
-  public all(companyId: number): Promise<Account[]> {
+  public all(companyId: number): Promise<Entities.Account[]> {
     return this.getRequest(`/external/companies/${companyId}/accounts`, {})
-      .then(response => (new AccountTransformer).items(response))
+      .then(response => (new Transformers.Account).items(response))
   }
 
 }
