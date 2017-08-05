@@ -1,4 +1,13 @@
 export interface AuthenticationConfig {
-  clientId: string;
+  
+  /**
+   * The application name to be shown inside Tide
+   */
+  applicationName: string;
+
+  /**
+   * The url to redirect to after Auth has been performed
+   */
   redirectUrl: string;
+
 }

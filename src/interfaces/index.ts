@@ -4,3 +4,6 @@ export { Category } from "./category";
 export { Company } from "./company";
 export { Transaction } from "./transaction";
 export { Credentials } from "./credentials";
+export { Service } from "./service";
+export { Factory } from "./factory";
+export { RequiresService } from "./requiresService";

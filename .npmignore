@@ -1,3 +1,5 @@
+/.gitignore
+/.DS_Store
 /src
 /dist/example.*
 /tsconfig.json
