@@ -1,6 +1,6 @@
 {
   "name": "node-tide",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "A Node modules to assist with connections to the Tide business banking API",
   "repository": {
     "type": "git",
