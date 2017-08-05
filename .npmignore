@@ -1,2 +1,4 @@
 /src
 /dist/example.*
+/tsconfig.json
+/package-lock.json
