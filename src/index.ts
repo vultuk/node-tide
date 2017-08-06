@@ -1,5 +1,5 @@
 export * from "./services";
-export * from "./entities";
+export * from "./interfaces";
 
 import * as Services from "./services";
 

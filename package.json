@@ -1,7 +1,8 @@
 {
   "name": "node-tide",
   "version": "0.2.0",
-  "description": "A Node modules to assist with connections to the Tide business banking API",
+  "description": "A Node module to assist with connections to the Tide business banking API",
+  "author": "Simon Skinner <simon@sisk-ltd.co.uk>",
   "repository": {
     "type": "git",
     "url": "https://github.com/vultuk/node-tide"
