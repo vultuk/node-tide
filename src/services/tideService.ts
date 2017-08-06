@@ -1,3 +1,4 @@
+import * as Errors from "../errors";
 import * as Interfaces from "../interfaces";
 import * as request from "request-promise-native";
 
@@ -65,7 +66,47 @@ export class TideService implements Interfaces.Service {
         },
         body: data,
         json: true
-      }));
+      }))
+      .catch(err => {
+        throw this.returnError(err.statusCode, err);
+      });
+  }
+
+  /**
+   * Find the appropriate error required to be thrown for this hrrp request
+   * @param  {number}                  code The error code thrown by the API
+   * @param  {Error}                   err  The original Error
+   * @return {Interfaces.ErrorMessage}      The node-tide error message
+   */
+  private returnError(code: number, err: Error): Interfaces.ErrorMessage {
+    switch(code) {
+      case 400:
+        return new Errors.BadRequestError();
+      case 401:
+        return new Errors.UnauthorisedError();
+      case 403:
+        return new Errors.ForbiddenError();
+      case 404:
+        return new Errors.NotFoundError();
+      case 405:
+        return new Errors.NotAllowedError();
+      case 406:
+        return new Errors.NotAcceptableError();
+      case 429:
+        return new Errors.TooManyRequestsError();
+      case 500:
+        return new Errors.InternalServerError();
+      case 503:
+        return new Errors.UnavailableError();
+      default:
+        let newError: Interfaces.ErrorMessage = new Errors.InternalServerError();
+
+        newError.message = err.message;
+        newError.description = err.message;
+        newError.httpErrorCode = 500;
+
+        return newError;
+    }
   }
 
 }
