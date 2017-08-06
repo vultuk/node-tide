@@ -171,4 +171,4 @@ It is also possible to filter transactions by reference using `this.transactions
 
 ## License
 
-MIT © [Simon Skinner]()
+MIT © [Simon Skinner](https://twitter.com/vultuk)
