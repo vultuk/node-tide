@@ -7,3 +7,4 @@ export { Credentials } from "./credentials";
 export { Service } from "./service";
 export { Factory } from "./factory";
 export { RequiresService } from "./requiresService";
+export { ErrorMessage } from "./errorMessage";

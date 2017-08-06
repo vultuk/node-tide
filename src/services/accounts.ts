@@ -12,7 +12,7 @@ export class Accounts extends RequiresService {
    */
   public all(companyId: number): Promise<Entities.Account[]> {
     return this.service.getRequest(`/external/companies/${companyId}/accounts`, {})
-      .then(response => (new Factories.Account).items(response))
+      .then(response => (new Factories.Account).items(response));
   }
 
 }
