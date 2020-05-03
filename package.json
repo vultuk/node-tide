@@ -12,12 +12,14 @@
   "scripts": {
     "compile": "rimraf dist && tsc -d",
     "example": "npm run compile && node ./dist/example.js",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run snyk-protect && npm run compile",
+    "snyk-protect": "snyk protect"
   },
   "dependencies": {
     "moment": "^2.18.1",
     "request": "^2.81.0",
-    "request-promise-native": "^1.0.4"
+    "request-promise-native": "^1.0.4",
+    "snyk": "^1.316.2"
   },
   "devDependencies": {
     "@types/node": "^7.0.32",
@@ -25,5 +27,6 @@
     "rimraf": "^2.5.4",
     "tslint": "^5.4.2",
     "typescript": "^2.4.0"
-  }
+  },
+  "snyk": true
 }
